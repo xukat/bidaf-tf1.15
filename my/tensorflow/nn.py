@@ -1,10 +1,10 @@
-from tensorflow.python.ops import rnn_cell_impl
+#from tensorflow.python.ops.rnn_cell_impl import _linear
+from tensorflow.contrib.rnn.python.ops.core_rnn_cell import _linear
+
 from tensorflow.python.util import nest
 import tensorflow as tf
 
 from my.tensorflow import flatten, reconstruct, add_wd, exp_mask
-
-_linear = rnn_cell_impl._linear
 
 def linear(args, output_size, bias, bias_start=0.0, scope=None, squeeze=False, wd=0.0, input_keep_prob=1.0,
            is_train=None):
