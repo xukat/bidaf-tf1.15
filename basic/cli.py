@@ -4,7 +4,10 @@ import tensorflow as tf
 
 from basic.main import main as m
 
+import pdb
+
 flags = tf.app.flags
+# flags = tf.compat.v1.app.flags
 
 # Names and directories
 flags.DEFINE_string("model_name", "basic", "Model name [basic]")
@@ -120,7 +123,10 @@ def main(_):
 
     config.out_dir = os.path.join(config.out_base_dir, config.model_name, str(config.run_id).zfill(2))
 
+    pdb.set_trace()
+
     m(config)
 
 if __name__ == "__main__":
-    tf.app.run()
+    tf.compat.v1.app.run()
+    # tf.app.run()

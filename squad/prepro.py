@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import pdb
 # data: q, cq, (dq), (pq), y, *x, *cx
 # shared: x, cx, (dx), (px), word_counter, char_counter, word2vec
 # no metadata
@@ -125,7 +126,7 @@ def prepro_each(args, data_type, start_ratio=0.0, stop_ratio=1.0, out_name="defa
 
     source_path = in_path or os.path.join(args.source_dir, "{}-{}v1.1.json".format(data_type, args.suffix))
     source_data = json.load(open(source_path, 'r'))
-
+    # pdb.set_trace()
     q, cq, y, rx, rcx, ids, idxs = [], [], [], [], [], [], []
     na = []
     cy = []
